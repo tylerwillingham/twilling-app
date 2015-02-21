@@ -1,3 +1,6 @@
 # Python & Django-specific
 __pycache__/
 venv/
+
+# Database-related
+db.sqlite3
