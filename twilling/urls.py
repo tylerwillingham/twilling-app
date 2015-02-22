@@ -1,10 +1,11 @@
-from django.conf.urls import patterns, include, url
-from django.contrib import admin
+from django.conf.urls import url
+from rest_framework.urlpatterns import format_suffix_patterns
+from blog import views
 
-urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'twilling.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
+urlpatterns = [
+    url(r'^blog/posts/$', views.PostList.as_view()),
+    url(r'^blog/statuses/$', views.StatusList.as_view()),
+    url(r'^blog/categories/$', views.CategoryList.as_view())
+]
 
-    url(r'^admin/', include(admin.site.urls)),
-)
+urlpatterns = format_suffix_patterns(urlpatterns)
