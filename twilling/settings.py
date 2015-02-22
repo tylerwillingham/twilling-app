@@ -37,6 +37,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'rest_framework',
+
     'blog',
 )
 
@@ -53,6 +55,12 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'twilling.urls'
 
 WSGI_APPLICATION = 'twilling.wsgi.application'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny'
+    ]
+}
 
 
 # Database
