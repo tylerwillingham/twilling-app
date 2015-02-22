@@ -8,6 +8,9 @@ class Status(models.Model):
     def __str__(self):
         return self.title
 
+    class Meta:
+        ordering = ['slug']
+
 
 class Category(models.Model):
     title = models.CharField(max_length=70, unique=True)
@@ -15,6 +18,9 @@ class Category(models.Model):
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        ordering = ['slug']
 
 
 class Post(models.Model):
@@ -28,3 +34,6 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        ordering = ['-created_at']
