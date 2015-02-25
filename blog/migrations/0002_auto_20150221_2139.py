@@ -6,7 +6,9 @@ from blog.models import Status
 
 
 def create_initial_statuses(apps, schema_editor):
-    """ Creates the initial statuses of: Published, Draft & Closed"""
+    """
+    Creates the initial statuses of: Published, Draft & Closed
+    """
     Status = apps.get_model('blog', 'Status')
     initial_statuses = [
         Status(
